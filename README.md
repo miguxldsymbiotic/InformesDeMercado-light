@@ -7,9 +7,9 @@ Este repositorio contiene la arquitectura **Premium** de generación de informes
 El proyecto está dividido en dos microservicios principales:
 
 - **Backend (`/backend`)**: API construida con **FastAPI** y **Python**. Utiliza el motor de base de datos **DuckDB** para un procesamiento de datos ultrarrápido y flexible.
-- **Frontend (`/frontend`)**: Aplicación web construida con **React**, **Vite** y **TypeScript**. Incluye el motor de renderizado de PDFs de alta fidelidad basado en plantillas HTML/CSS profesionales.
+- **Frontend (`/frontend`)**: Aplicación web **Ultra-Rápida** construida con **React**, **Vite** y **TypeScript**. Optimizada como una herramienta de un solo propósito para la generación inmediata de informes, eliminando tiempos de carga innecesarios.
 
-## 📊 Fuentes de Información Integradadas
+## 📊 Fuentes de Información Integradas
 
 El sistema procesa y normaliza datos de las siguientes fuentes gubernamentales:
 1.  **SNIES**: Identidad institucional, oferta y costos.
@@ -19,6 +19,7 @@ El sistema procesa y normaliza datos de las siguientes fuentes gubernamentales:
 
 ## ✨ Características Principales
 
+- **Experiencia Directa (Single-Purpose)**: Al abrir la aplicación, el usuario accede directamente al buscador de SNIES, eliminando la navegación por dashboards complejos para maximizar la velocidad de respuesta.
 - **Reporte en PDF de 7 Secciones**:
   - Identidad Institucional.
   - Análisis de Indicadores Clave (KPIs).

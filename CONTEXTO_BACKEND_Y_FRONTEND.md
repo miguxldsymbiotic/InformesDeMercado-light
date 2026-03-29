@@ -4,7 +4,7 @@ Este documento detalla el estado actual del generador de informes de mercado, el
 
 ## 1. Cumplimiento de Restricciones del Proyecto
 - **No modificación del Backend**: Se ha mantenido la estructura original del backend en `SYMBIO-FORMES/InformeDeMercado/backend`. No se han añadido nuevos routers ni servicios complejos, respetando la carga de datos existente basada en Parquet y DuckDB.
-- **Enfoque en Frontend**: Toda la lógica de generación de informes se ha movido al frontend (`ReportGenerator.tsx`) para evitar dependencias fallidas de PDF en el servidor (como Playwright o wkhtmltopdf).
+- **Enfoque en Frontend de un Solo Propósito**: Toda la lógica de generación de informes se ha concentrado en una **Interfaz Única Directa**. Se han desactivado las vistas de Dashboard General y Análisis Regional para priorizar la velocidad de descarga del reporte estratégico.
 
 ## 2. Cumplimiento de KPIs y Datos
 El informe generado integra exitosamente las siguientes 12 fuentes de datos en paralelo:
@@ -16,14 +16,14 @@ El informe generado integra exitosamente las siguientes 12 fuentes de datos en p
 - **Contexto de Mercado**: Comparación automática con el promedio del Núcleo Básico del Conocimiento (NBC).
 
 ## 3. Resolución del Error 404 ("Failed to fetch specific program data")
-- **Diagnóstico**: El error 404 persistente se debe a que el navegador estaba cargando una versión antigua del frontend (posiblemente de la carpeta `extraccion_recursos`) que intentaba llamar a `/programs/specific`.
-- **Acción**: Se ha unificado el punto de entrada en la pestaña **"Reportes PDF"** del sistema actual. Este nuevo módulo utiliza el servicio `reportService.ts`, el cual es resiliente y puede generar el reporte incluso si faltan algunos sets de datos específicos para un SNIES.
+- **Diagnóstico**: El error 404 persistente se debe a que el navegador estaba cargando una versión antigua del frontend que intentaba llamar a `/programs/specific`.
+- **Acción**: Se ha unificado el acceso en la página principal. Ya no existen rutas secundarias ni dashboards que generen peticiones fallidas al inicio.
 
 ## 4. Instrucciones de Ejecución
 Para asegurar que se está viendo la versión correcta y estable:
 1. **Reiniciar los servicios**: Detener todos los procesos de Vite/Python y ejecutar `npm run dev` únicamente dentro de `SYMBIO-FORMES/InformeDeMercado/frontend`.
 2. **Hard Refresh**: En el navegador, presionar `Ctrl + F5` para limpiar el caché de scripts antiguos.
-3. **Pestaña Correcta**: Navegar a la pestaña **"Reportes PDF"** en el sidebar izquierdo.
+3. **Uso**: Ingrese el SNIES directamente en el buscador de la página principal. Ya no se requiere navegar por pestañas laterales.
 
 ---
 *Generado por Antigravity - SymbiAnalytics Project System*

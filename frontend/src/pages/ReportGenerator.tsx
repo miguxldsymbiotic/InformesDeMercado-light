@@ -107,28 +107,21 @@ const ReportGenerator: React.FC = () => {
 
     return (
         <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="mb-10">
-                <div className="flex items-center space-x-4 mb-3">
-                    <div className="p-3 bg-slate-100 rounded-2xl">
-                        <FileText className="w-7 h-7 text-slate-700" />
-                    </div>
-                    <div>
-                        <h1 className="text-3xl font-black text-slate-900 tracking-tight">Informe de Mercado</h1>
-                        <p className="text-[0.7rem] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
-                            Generador de Reportes PDF
-                        </p>
-                    </div>
+            {/* Header Simplified */}
+            <div className="mb-10 text-center sm:text-left">
+                <div className="inline-flex items-center space-x-3 mb-2 bg-slate-100 px-4 py-2 rounded-full">
+                    <Search className="w-4 h-4 text-slate-600" />
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Herramienta de Búsqueda</span>
                 </div>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-2xl">
-                    Busque un programa academico por Codigo SNIES, nombre del programa o institucion. 
-                    El informe se generara automaticamente con datos oficiales del SNIES, OLE, SPADIES y Saber PRO.
+                <h2 className="text-3xl font-black text-slate-900 tracking-tight">Buscar Programa Académico</h2>
+                <p className="text-sm text-slate-500 mt-2 max-w-xl">
+                    Ingrese el código SNIES, nombre del programa o institución para descargar su reporte estratégico.
                 </p>
             </div>
 
             {/* Search */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6" ref={searchRef}>
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] block mb-3">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-3 sm:p-6 mb-6" ref={searchRef}>
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] block mb-3 pl-1">
                     Buscar Programa Academico
                 </label>
                 <div className="relative">
@@ -285,8 +278,7 @@ const ReportGenerator: React.FC = () => {
                     </div>
                     <h3 className="text-lg font-black text-slate-700 mb-2">Seleccione un Programa</h3>
                     <p className="text-sm text-slate-400 max-w-md mx-auto">
-                        Use el buscador de arriba para encontrar un programa por codigo SNIES, nombre o institucion. 
-                        El informe incluira indicadores comparativos, evolucion historica y perfil demografico.
+                        Use el buscador de arriba para encontrar un programa por código SNIES, nombre o institución. 
                     </p>
                 </div>
             )}
